@@ -79,15 +79,27 @@ else :
 import random
 from statistics import mode, median, mean
 
-mi_lista = [random.randint(1, 100) for i in range(50)]
+numeros_aleatorios = [random.randint(1, 100) for i in range(50)]
 
-print(mean(mi_lista))
-print(mode(mi_lista))
-print(median(mi_lista))
+moda = mode(numeros_aleatorios)
+mediana = median(numeros_aleatorios)
+media = mean(numeros_aleatorios)
+
+print(f"media: {media}\nmediana: {mediana}\nmoda: {moda}")
+
+if media > mediana > moda:
+    print("Distribución con sesgo positivo.")
+elif media < mediana < moda:
+    print("Distribución con sesgo negativo.")
+elif media == mediana == moda:
+    print("Distribución simétrica.")
+else:
+    print("Distribución no cumple con un patrón claro de sesgo.")
+
 
 #7) Escribir un programa que solicite una frase o palabra al usuario. Si el string ingresado termina con vocal, añadir un signo de exclamación al final e imprimir el string resultante por pantalla; en caso contrario, dejar el string tal cual lo ingresó el usuario e imprimirlo porpantalla. 
 
-palab_o_frase = input("Ingrese un apalabra o frase: ")
+palab_o_frase = input("Ingrese un apalabra o frase: ").lower()
 
 ultima_letra = palab_o_frase [-1]
 
